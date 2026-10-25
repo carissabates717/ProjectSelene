@@ -1,0 +1,342 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Selene</title>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Selene</title>
+
+    <style>
+        #result {
+    background-color: white;
+    border: 2px solid #8055a5;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 1.6;
+    white-space: pre-line;
+}
+        #result:empty {
+            display: none;
+        }
+
+        body {
+            background-color: #f5effa;
+            color: #30243a;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+
+    <style>
+        body {
+            background-color: #f5effa;
+            color: #30243a;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #8055a5;
+            text-align: center;
+        }
+
+        h2 {
+            color: #8055a5;
+        }
+
+        button {
+            background-color: #8055a5;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    
+body {
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+p {
+    line-height: 1.6;
+}
+
+label {
+    display: inline-block;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+button {
+    font-size: 16px;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+}
+
+.question-card {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    border: 1px solid #e5d8ef;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+</style>
+</head>
+<body>
+<h1>Project Selene</h1>
+<p>Protecting Children's Digital Footprints</p>
+
+<h2>Welcome to Project Selene</h2>
+<p>
+Project Selene is a digital privacy awareness website
+designed to help parents understand how sharing information
+about their children online can affect their safety and privacy.
+</p>
+
+<h2>Children's Digital Privacy Assessment</h2>
+
+
+<div class="question-card">
+
+    <p>1. Do you share your child's full name online?</p>
+
+    <label>
+        <input type="radio" name="question1" value="yes">
+        Yes
+    </label>
+
+    <label>
+        <input type="radio" name="question1" value="no">
+        No
+    </label>
+
+</div>
+
+<div class="question-card">
+
+<p>2. Do your photos or posts reveal your child's school?</p>
+
+<label>
+    <input type="radio" name="question2" value="yes">
+    Yes
+</label>
+
+<label>
+    <input type="radio" name="question2" value="no">
+    No
+</label>
+</div>
+
+<div class="question-card">
+<p>3. Do you share your child's current location online?</p>
+
+<label>
+    <input type="radio" name="question3" value="yes">
+    Yes
+</label>
+
+<label>
+    <input type="radio" name="question3" value="no">
+    No
+</label>
+</div>
+<div class="question-card">
+<p>4. Are your social media posts about your child visible to the public?</p>
+
+<label>
+    <input type="radio" name="question4" value="yes">
+    Yes
+</label>
+
+<label>
+    <input type="radio" name="question4" value="no">
+    No
+</label>
+</div>
+<div class="question-card">
+<p>5. Do you share your child's daily routines or schedule online?</p>
+
+<label>
+    <input type="radio" name="question5" value="yes">
+    Yes
+</label>
+
+<label>
+    <input type="radio" name="question5" value="no">
+    No
+</label>
+</div>
+<p>
+    <button id="calculate">Calculate My Score</button>
+</p>
+
+<p id="result"></p>
+
+<script>
+    const button = document.getElementById("calculate");
+
+    button.addEventListener("click", function() {
+        let score = 0;
+        let recommendations = [];
+
+        for (let i = 1; i <= 5; i++) {
+            const answer = document.querySelector(
+                'input[name="question' + i + '"]:checked'
+            );
+
+if (!answer) {
+    document.getElementById("result").textContent =
+        "Please answer all five questions.";
+    return;
+}
+
+
+        if (answer.value === "yes") {
+            score = score + 1;
+
+            if (i === 1) {
+                recommendations.push(
+                    "Consider using your child's first name or a nickname instead of sharing their full name publicly."
+                );
+            }
+
+            if (i === 2) {
+                recommendations.push(
+                    "Avoid sharing photos that reveal your child's school name, school logo, or identifying school information."
+                );
+            }
+
+            if (i === 3) {
+                recommendations.push(
+                    "Avoid sharing your child's real-time location. Wait until after leaving a location before posting photos or updates."
+                );
+            }
+
+            if (i === 4) {
+                recommendations.push(
+                    "Review your social media privacy settings and limit posts about your child to people you know and trust."
+                );
+            }
+
+            if (i === 5) {
+                recommendations.push(
+                    "Avoid posting your child's daily schedule, regular activities, or predictable routines that could reveal where they will be."
+                );
+            }
+        }
+let message = "Your privacy exposure score is " + score + " out of 5.";
+
+if (score === 0) {
+    message += " Great job reviewing what you share! Continue protecting your child's privacy.";
+} else if (score <= 2) {
+    message += " You have a few potential privacy exposures. Review what information you share online.";
+} else {
+    message += " Several privacy exposure factors were identified. Consider limiting personal details and reviewing your privacy settings.";
+}
+
+if (recommendations.length > 0) {
+    message += "\n\nPrivacy Recommendations:\n";
+    message += recommendations.join("\n");
+}
+
+document.getElementById("result").textContent = message;
+
+    });
+</script>
+
+<script>
+const button = document.getElementById("calculate");
+
+button.addEventListener("click", function() {
+    let score = 0;
+    let recommendations = [];
+
+    for (let i = 1; i <= 5; i++) {
+        const answer = document.querySelector(
+            'input[name="question' + i + '"]:checked'
+        );
+
+        if (!answer) {
+            document.getElementById("result").textContent =
+                "Please answer all five questions.";
+            return;
+        }
+
+        if (answer.value === "yes") {
+            score = score + 1;
+
+            if (i === 1) {
+                recommendations.push(
+                    "Consider using your child's first name or a nickname instead of sharing their full name publicly."
+                );
+            }
+
+            if (i === 2) {
+                recommendations.push(
+                    "Avoid sharing photos that reveal your child's school name, school logo, or identifying school information."
+                );
+            }
+
+            if (i === 3) {
+                recommendations.push(
+                    "Avoid sharing your child's real-time location. Wait until after leaving a location before posting photos or updates."
+                );
+            }
+
+            if (i === 4) {
+                recommendations.push(
+                    "Review your social media privacy settings and limit posts about your child to people you know and trust."
+                );
+            }
+
+            if (i === 5) {
+                recommendations.push(
+                    "Avoid posting your child's daily schedule, regular activities, or predictable routines that could reveal where they will be."
+                );
+            }
+        }
+    }
+
+    let message = "Your privacy exposure score is " + score + " out of 5.";
+
+    if (score === 0) {
+        message += " Great job reviewing what you share! Continue protecting your child's privacy.";
+    } else if (score <= 2) {
+        message += " You have a few potential privacy exposures. Review what information you share online.";
+    } else {
+        message += " Several privacy exposure factors were identified. Consider limiting personal details and reviewing your privacy settings.";
+    }
+
+    if (recommendations.length > 0) {
+        message += "\n\nPrivacy Recommendations:\n";
+        message += recommendations.join("\n");
+    }
+
+    document.getElementById("result").textContent = message;
+});
+</script>
+
+</body>
+</html>
