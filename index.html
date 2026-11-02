@@ -1,0 +1,454 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Selene</title>
+
+    <style>
+        body {
+            background-color: #f5effa;
+            color: #30243a;
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            color: #8055a5;
+            text-align: center;
+        }
+
+        h2 {
+            color: #8055a5;
+        }
+
+        .subtitle {
+            text-align: center;
+        }
+
+        .question-card {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            border: 1px solid #e5d8ef;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .question-card h3 {
+            margin-top: 0;
+            color: #8055a5;
+            font-size: 18px;
+        }
+
+        .explanation {
+            color: #66616f;
+            font-size: 14px;
+        }
+
+        label {
+            display: inline-block;
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+
+        button {
+            background-color: #8055a5;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+        }
+
+        button:hover {
+            background-color: #69448b;
+        }
+
+        #reset {
+            background-color: #777;
+        }
+
+        #result {
+            background-color: white;
+            border: 2px solid #8055a5;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+            font-size: 16px;
+            line-height: 1.7;
+            white-space: pre-line;
+        }
+
+        #result:empty {
+            display: none;
+        }
+
+        .privacy-note {
+            font-size: 13px;
+            color: #66616f;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Project Selene</h1>
+<p class="subtitle">Protecting Children's Digital Footprints</p>
+
+<h2>Welcome to Project Selene</h2>
+
+<p>
+Project Selene is a digital privacy awareness website
+designed to help parents understand how sharing information
+about their children online can affect their safety and privacy.
+</p>
+
+<h2>Children's Digital Privacy Assessment</h2>
+
+<p>
+Answer the following 10 questions based on what you share
+about your child online. Each question includes examples
+to help you recognize information you may be sharing
+without realizing it.
+</p>
+
+<p class="privacy-note">
+This assessment is for educational purposes only.
+Your answers are not collected or saved.
+</p>
+
+<form id="assessment">
+
+<div class="question-card">
+    <h3>1. Do you share pictures or posts that include your child's full name online?</h3>
+
+    <p class="explanation">
+        This could include birthday announcements, school achievements,
+        certificates, or posts where your child's first and last name
+        are visible.
+    </p>
+
+    <label>
+        <input type="radio" name="question1" value="yes">
+        Yes
+    </label>
+
+    <label>
+        <input type="radio" name="question1" value="no">
+        No
+    </label>
+</div>
+
+<div class="question-card">
+    <h3>2. Have you shared pictures or posts that reveal which school or daycare your child attends?</h3>
+
+    <p class="explanation">
+        For example, first-day-of-school pictures, school uniforms,
+        building signs, backpacks with school logos, or posts
+        mentioning the school's name.
+    </p>
+
+    <label>
+        <input type="radio" name="question2" value="yes">
+        Yes
+    </label>
+
+    <label>
+        <input type="radio" name="question2" value="no">
+        No
+    </label>
+</div>
+
+<div class="question-card">
+    <h3>3. Do you share your child's current location or tag places while you're still there?</h3>
+
+    <p class="explanation">
+        This could include checking in at parks, restaurants,
+        playgrounds, or events while you're visiting with your child.
+    </p>
+
+    <label>
+        <input type="radio" name="question3" value="yes">
+        Yes
+    </label>
+
+    <label>
+        <input type="radio" name="question3" value="no">
+        No
+    </label>
+</div>
+
+<div class="question-card">
+    <h3>4. Are pictures or posts about your child visible to people outside your trusted friends and family?</h3>
+
+    <p class="explanation">
+        For example, public Facebook posts, public Instagram
+        accounts, or TikTok videos that anyone can view, share,
+        or save.
+    </p>
+
+    <label>
+        <input type="radio" name="question4" value="yes">
+        Yes
+    </label>
+
+    <label>
+        <input type="radio" name="question4" value="no">
+        No
+    </label>
+</div>
+
+<div class="question-card">
+    <h3>5. Do you share information about your child's daily schedule or places they regularly visit?</h3>
+
+    <p class="explanation">
+        This might include school drop-off and pickup times,
+        daycare schedules, weekly activities, or locations
+        your child visits on certain days.
+    </p>
+
+    <label>
+        <input type="radio" name="question5" value="yes">
+        Yes
+    </label>
+
+    <label>
+        <input type="radio" name="question5" value="no">
+        No
+    </label>
+</div>
+
+<div class="question-card">
+    <h3>6. Do you share your child's exact birthday, age, or grade level on social media?</h3>
+
+    <p class="explanation">
+        For example, birthday posts showing their full date of birth,
+        first-day-of-school signs, or updates about what grade
+        they're entering.
+    </p>
+
+    <label>
+        <input type="radio" name="question6" value="yes">
+        Yes
+    </label>
+
+    <label>
+        <input type="radio" name="question6" value="no">
+        No
+    </label>
+</div>
+
+<div class="question-card">
+    <h3>7. Have you shared pictures that could reveal where your child lives?</h3>
+
+    <p class="explanation">
+        This could include house numbers, street signs,
+        recognizable landmarks, or pictures showing
+        the outside of your home.
+    </p>
+
+    <label>
+        <input type="radio" name="question7" value="yes">
+        Yes
+    </label>
+
+    <label>
+        <input type="radio" name="question7" value="no">
+        No
+    </label>
+</div>
+
+<div class="question-card">
+    <h3>8. Do you post pictures that show your family's vehicle or license plate?</h3>
+
+    <p class="explanation">
+        For example, pictures taken in the driveway,
+        family outings, or photos where a license plate
+        or other identifying vehicle details are clearly visible.
+    </p>
+
+    <label>
+        <input type="radio" name="question8" value="yes">
+        Yes
+    </label>
+
+    <label>
+        <input type="radio" name="question8" value="no">
+        No
+    </label>
+</div>
+
+<div class="question-card">
+    <h3>9. Do you share vacation pictures or travel updates while your family is still away from home?</h3>
+
+    <p class="explanation">
+        This might include announcing when you're leaving,
+        posting your hotel location, or sharing that your
+        family will be away for several days.
+    </p>
+
+    <label>
+        <input type="radio" name="question9" value="yes">
+        Yes
+    </label>
+
+    <label>
+        <input type="radio" name="question9" value="no">
+        No
+    </label>
+</div>
+
+<div class="question-card">
+    <h3>10. Do you share pictures or information that reveal where your child regularly participates in activities?</h3>
+
+    <p class="explanation">
+        For example, sports team names, dance studios,
+        practice schedules, team uniforms, or locations
+        where your child attends weekly activities.
+    </p>
+
+    <label>
+        <input type="radio" name="question10" value="yes">
+        Yes
+    </label>
+
+    <label>
+        <input type="radio" name="question10" value="no">
+        No
+    </label>
+</div>
+
+<button type="submit" id="calculate">
+    Calculate My Score
+</button>
+
+<button type="reset" id="reset">
+    Start Over
+</button>
+
+</form>
+
+<div id="result" role="status" aria-live="polite"></div>
+
+<script>
+const form = document.getElementById("assessment");
+const result = document.getElementById("result");
+
+const recommendations = [
+    "Consider using your child's first name or a nickname instead of sharing their full name publicly.",
+
+    "Avoid sharing photos that reveal your child's school name, school logo, or identifying school information.",
+
+    "Avoid sharing your child's real-time location. Wait until after leaving a location before posting photos or updates.",
+
+    "Review your social media privacy settings and limit posts about your child to people you know and trust.",
+
+    "Avoid posting your child's daily schedule, regular activities, or predictable routines.",
+
+    "Consider limiting posts that reveal your child's exact birth date, age, or grade level.",
+
+    "Check pictures for house numbers, street signs, or recognizable landmarks before posting them.",
+
+    "Blur or crop out license plates and other identifying vehicle details before sharing pictures.",
+
+    "Consider waiting until you return home before sharing vacation photos or travel updates.",
+
+    "Avoid sharing activity locations, team names, and practice schedules that reveal where your child regularly spends time."
+];
+
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    let score = 0;
+    let selectedRecommendations = [];
+
+    for (let i = 1; i <= 10; i++) {
+        const answer = document.querySelector(
+            'input[name="question' + i + '"]:checked'
+        );
+
+        if (!answer) {
+            result.textContent =
+                "Please answer all 10 questions before calculating your score.";
+
+            document.querySelector(
+                'input[name="question' + i + '"]'
+            ).focus();
+
+            return;
+        }
+
+        if (answer.value === "yes") {
+            score++;
+
+            selectedRecommendations.push(
+                recommendations[i - 1]
+            );
+        }
+    }
+
+    let exposureLevel = "";
+    let message = "";
+
+    if (score <= 3) {
+        exposureLevel = "Low";
+        message = "You have fewer identified privacy exposure factors based on your answers.";
+    } else if (score <= 6) {
+        exposureLevel = "Moderate";
+        message = "Some of your sharing habits may reveal personal information about your child.";
+    } else {
+        exposureLevel = "High";
+        message = "Several of your sharing habits may reveal personal information about your child.";
+    }
+
+    let output =
+        "Your Privacy Exposure Score: " + score + " out of 10\n" +
+        "Exposure Level: " + exposureLevel + "\n\n" +
+        message;
+
+    if (selectedRecommendations.length > 0) {
+        output += "\n\nPersonalized Privacy Recommendations:\n\n";
+
+        selectedRecommendations.forEach(function(tip, index) {
+            output += (index + 1) + ". " + tip + "\n\n";
+        });
+    } else {
+        output += "\n\nContinue reviewing your privacy settings and being mindful of what you share online.";
+    }
+
+    output += "\nThis is an educational awareness score, not a guarantee of safety.";
+
+    result.textContent = output;
+    result.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+});
+
+form.addEventListener("reset", function() {
+    result.textContent = "";
+});
+</script>
+
+</body>
+</html>
